@@ -11,7 +11,12 @@ pool:
 
 variables:
   solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
+  buildPlatform: 'Any - task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
+    vstsFeed: '47388936-504a-4f7f-bf15-91321291b954''
   buildConfiguration: 'Release'
 
 steps:
