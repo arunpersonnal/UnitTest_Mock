@@ -18,6 +18,11 @@ variables:
     feedsToUse: 'select'
     vstsFeed: '47388936-504a-4f7f-bf15-91321291b954''
   buildConfiguration: 'Release'
+- task: NuGetCommand@2
+  inputs:
+    command: 'restore'
+    restoreSolution: '**/*.sln'
+    feedsToUse: 'select'
 
 steps:
 - task: NuGetToolInstaller@1
